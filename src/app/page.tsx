@@ -1,113 +1,184 @@
-import Image from 'next/image'
+'use client'
+import Link from 'next/link'
+import Navigation from '@/components/layout/Navigation'
+import TerminalDemo from '@/components/Terminal'
+import AnimatedIcon from '@/components/AnimatedIcon'
+import ProjectCard from '@/components/ProjectCard'
+import BlogPostCard from '@/components/BlogPostCard'
+import Footer from '@/components/layout/Footer'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-gradient-to-b from-background via-background/95 to-primary/5">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="min-h-[80vh] grid md:grid-cols-2 items-center p-8 max-w-7xl mx-auto relative">
+        {/* Animated background icons */}
+        <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
+          <AnimatedIcon 
+            emoji="🔒" 
+            label="Security" 
+            delay={0} 
+            className="top-20 left-20" 
+          />
+          <AnimatedIcon 
+            emoji="⚡" 
+            label="Performance" 
+            delay={2} 
+            className="top-40 right-[20%]" 
+          />
+          <AnimatedIcon 
+            emoji="☁️" 
+            label="Cloud" 
+            delay={4} 
+            className="bottom-40 left-[30%]" 
+          />
+          <AnimatedIcon 
+            emoji="🚀" 
+            label="Scale" 
+            delay={1} 
+            className="top-[30%] left-[40%]" 
+          />
+          <AnimatedIcon 
+            emoji="💻" 
+            label="Code" 
+            delay={3} 
+            className="bottom-20 right-20" 
+          />
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+        {/* Left side content */}
+        <div className="space-y-6 z-10">
+          <h1 className="text-5xl sm:text-6xl font-bold leading-tight">
+            Securing the
+            <span className="block text-primary">Digital Future</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-md">
+            Cybersecurity enthusiast and developer, exploring the intersection of security, 
+            cloud computing, and modern web development.
           </p>
-        </a>
+          <div className="flex gap-4">
+            <Link 
+              href="/projects"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              View Projects
+            </Link>
+            <Link 
+              href="/blogs"
+              className="border border-primary px-6 py-3 rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              Read Blog
+            </Link>
+          </div>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        {/* Right side terminal */}
+        <div className="hidden md:block">
+          <TerminalDemo />
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+      {/* Skills Grid */}
+      <section className="py-8 px-8 max-w-7xl mx-auto relative">
+        <div className="absolute left-1/2 -top-4 transform -translate-x-1/2 w-[2px] h-8 bg-gradient-to-b from-primary/20 to-transparent"></div>
+        <h2 className="text-3xl font-bold text-center mb-8">Areas of Expertise</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="p-6 rounded-lg border bg-card hover:shadow-lg transition-all hover:-translate-y-1">
+            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              🔒
+            </div>
+            <h3 className="text-xl font-bold mb-2">Security Research</h3>
+            <p className="text-muted-foreground">
+              Web application security, penetration testing, and CTF challenges
+            </p>
+          </div>
+          
+          <div className="p-6 rounded-lg border bg-card hover:shadow-lg transition-all hover:-translate-y-1">
+            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              ☁️
+            </div>
+            <h3 className="text-xl font-bold mb-2">Cloud Computing</h3>
+            <p className="text-muted-foreground">
+              Cloud security, AWS & on-prem infrastructure, Infrastructure as Code
+            </p>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className="p-6 rounded-lg border bg-card hover:shadow-lg transition-all hover:-translate-y-1">
+            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              💻
+            </div>
+            <h3 className="text-xl font-bold mb-2">Development</h3>
+            <p className="text-muted-foreground">
+              Full-stack development with modern frameworks and best security practices
+            </p>
+          </div>
+
+          <div className="p-6 rounded-lg border bg-card hover:shadow-lg transition-all hover:-translate-y-1">
+            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              ✍️
+            </div>
+            <h3 className="text-xl font-bold mb-2">Technical Writing</h3>
+            <p className="text-muted-foreground">
+              Detailed writeups, documentation, and security research papers
+            </p>
+          </div>
+        </div>
+      </section>
+
+        {/* Featured Projects */}
+            <section className="py-12 px-8 max-w-7xl mx-auto">
+            <div className="flex justify-between items-center mb-8">
+                <h2 className="text-3xl font-bold">Featured Projects</h2>
+                <Link 
+                href="/projects" 
+                className="text-primary hover:text-primary/80 font-medium inline-flex items-center gap-1"
+                >
+                View All Projects
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+                </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <ProjectCard 
+                title= "ParkSmart"
+                description= "AWS-based IoT Parking Web App"
+                tags= {['AWS', 'IoT', 'Python', 'React']}
+                link= "/projects/ParkSmart"
+                />
+
+            </div>
+            </section>
+
+            {/* Featured Blog Posts */}
+            <section className="py-12 px-8 max-w-7xl mx-auto">
+            <div className="flex justify-between items-center mb-8">
+                <h2 className="text-3xl font-bold">Featured Blog Posts</h2>
+                <Link 
+                href="/blogs" 
+                className="text-primary hover:text-primary/80 font-medium inline-flex items-center gap-1"
+                >
+                View All Posts
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+                </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <BlogPostCard 
+                title="Advent of Code 2024"
+                description="A writeup of the 25 days Christmas coding advent calendar. Ho ho ho!"
+                date="Dec 1, 2024"
+                readTime="15"
+                tags={['Coding', 'Data Structures and Algorithim', 'Tutorial']}
+                link="/blogs/AoC2024"
+                />
+
+            </div>
+            </section>
+      <Footer />
+    </div>
   )
 }
