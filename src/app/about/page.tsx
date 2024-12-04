@@ -1,7 +1,7 @@
 'use client'
 import PageWrapper from '@/components/layout/PageWrapper'
 import { Github, Linkedin, Mail, Terminal, Code, Plane, Bike, Coffee } from 'lucide-react'
-import Link from 'next/link'
+import Image from 'next/image'
 
 const skills = {
   "Languages & Frameworks": [
@@ -57,12 +57,13 @@ export default function AboutPage() {
           
           {/* Hero Section */}
           <section className="flex flex-col md:flex-row items-center gap-8 mb-16">
-            <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
-              <img 
+          <div className="w-48 h-48 relative rounded-full overflow-hidden shadow-lg">
+            <Image 
                 src="/profile.jpg" 
-                alt="Matthew"
-                className="w-full h-full object-cover"
-              />
+                alt="Your Name"
+                fill
+                className="object-cover"
+            />
             </div>
             <div>
               <h1 className="text-4xl font-bold mb-4">Matthew</h1>
@@ -71,7 +72,7 @@ export default function AboutPage() {
               </p>
               <div className="flex gap-4">
                 <a 
-                  href="https://github.com/yourusername"
+                  href="https://github.com/matthew3168"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors"
@@ -79,7 +80,7 @@ export default function AboutPage() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/matthew-tan-392950239/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
@@ -87,7 +88,7 @@ export default function AboutPage() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
-                  href="mailto:your.email@example.com"
+                  href="mailto:2201920b@student.tp.edu.sg"
                   className="p-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors"
                 >
                   <Mail className="w-5 h-5" />
@@ -101,7 +102,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-4">About Me</h2>
             <div className="bg-white rounded-xl shadow-md p-6">
               <p className="text-gray-600 leading-relaxed">
-                I'm a final-year Cybersecurity student passionate about building secure and scalable applications. 
+              I&apos;m a final-year Cybersecurity student passionate about building secure and scalable applications. 
                 With a strong foundation in both offensive and defensive security, I enjoy tackling complex 
                 problems and contributing to the tech community through CTF writeups and open-source projects.
               </p>

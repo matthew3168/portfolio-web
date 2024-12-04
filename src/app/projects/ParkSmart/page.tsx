@@ -24,23 +24,34 @@ const projectImages = [
   }
 ]
 
-const FeatureCard = ({ icon: Icon, title, description }) => (
-  <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-    <div className="flex items-center mb-4">
-      <div className="p-2 bg-blue-100 rounded-lg">
-        <Icon className="w-6 h-6 text-blue-600" />
+interface FeatureCardProps {
+    icon: React.ElementType; // The type for the Icon prop
+    title: string;
+    description: string;
+  }
+  
+  const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, description }) => (
+    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+      <div className="flex items-center mb-4">
+        <div className="p-2 bg-blue-100 rounded-lg">
+          <Icon className="w-6 h-6 text-blue-600" />
+        </div>
+        <h3 className="ml-3 text-xl font-semibold text-gray-800">{title}</h3>
       </div>
-      <h3 className="ml-3 text-xl font-semibold text-gray-800">{title}</h3>
+      <p className="text-gray-600">{description}</p>
     </div>
-    <p className="text-gray-600">{description}</p>
-  </div>
-)
+  );
 
-const TechBadge = ({ name }) => (
-  <div className="flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors duration-200">
-    <span className="text-sm font-medium">{name}</span>
-  </div>
-)
+  interface TechBadgeProps {
+    name: string;
+  }
+  
+  const TechBadge: React.FC<TechBadgeProps> = ({ name }) => (
+    <div className="flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors duration-200">
+      <span className="text-sm font-medium">{name}</span>
+    </div>
+  );
+  
 
 export default function ProjectPage() {
   const [activeTab, setActiveTab] = useState('overview')

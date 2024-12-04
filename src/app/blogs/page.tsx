@@ -13,11 +13,11 @@ export default function BlogPage() {
     {
       title: "Advent of Code 2024 Writeup",
       description: "A 25 day Christmas coding challemge.",
-      date: "Dec 26, 2024",
-      readTime: "25",
+      date: "Dec 1, 2024",
+      readTime: "2",
       tags: ['Tutorials', 'Coding', 'Data Structure and Algorithims'],
       category: 'Data Structure and Algorithims',
-      link: "/blog/AoC2024"
+      link: "/blogs/AoC2024"
     },
     // ... other posts
   ]

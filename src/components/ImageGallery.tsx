@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import Image from 'next/image'
 
 interface Image {
   src: string
@@ -34,10 +35,11 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             className="relative aspect-video cursor-pointer hover:opacity-90 transition-opacity"
             onClick={() => openModal(index)}
           >
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
-              className="object-cover w-full h-full rounded-lg"
+              fill
+              className="object-cover rounded-lg"
             />
           </div>
         ))}
@@ -46,33 +48,17 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
       {/* Modal */}
       {currentImageIndex !== null && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
-          <button
-            onClick={closeModal}
-            className="absolute top-4 right-4 text-white hover:text-gray-300"
-          >
-            <X className="w-8 h-8" />
-          </button>
+          {/* ... buttons ... */}
           
-          <button
-            onClick={prevImage}
-            className="absolute left-4 text-white hover:text-gray-300"
-          >
-            <ChevronLeft className="w-8 h-8" />
-          </button>
-          
-          <button
-            onClick={nextImage}
-            className="absolute right-4 text-white hover:text-gray-300"
-          >
-            <ChevronRight className="w-8 h-8" />
-          </button>
-
-          <div className="max-w-4xl max-h-[80vh] px-4">
-            <img
-              src={images[currentImageIndex].src}
-              alt={images[currentImageIndex].alt}
-              className="max-w-full max-h-[70vh] object-contain"
-            />
+          <div className="max-w-4xl max-h-[80vh] px-4 relative">
+            <div className="relative w-full h-[70vh]">
+              <Image
+                src={images[currentImageIndex].src}
+                alt={images[currentImageIndex].alt}
+                fill
+                className="object-contain"
+              />
+            </div>
             {images[currentImageIndex].caption && (
               <p className="text-white text-center mt-4">
                 {images[currentImageIndex].caption}

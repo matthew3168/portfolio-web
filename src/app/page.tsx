@@ -171,7 +171,7 @@ export default function Home() {
                 title="Advent of Code 2024"
                 description="A writeup of the 25 days Christmas coding advent calendar. Ho ho ho!"
                 date="Dec 1, 2024"
-                readTime="15"
+                readTime="2"
                 tags={['Coding', 'Data Structures and Algorithim', 'Tutorial']}
                 link="/blogs/AoC2024"
                 />

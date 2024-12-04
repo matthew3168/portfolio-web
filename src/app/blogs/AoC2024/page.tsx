@@ -10,7 +10,21 @@ export default function ProjectPage() {
   // Will expand this as more days are completed
   const completedDays = [1]
   
-  const solutions = {
+  const solutions: { 
+    [key: number]: { 
+      title: string; 
+      tags: string[]; 
+      description: string; 
+      difficulty: string; 
+      parts: { 
+        title: string; 
+        problem: string; 
+        approach: string; 
+        code: string; 
+        explanation: string[]; 
+      }[]; 
+    } 
+  } = {
     1: {
       title: "Historian Hysteria",
       tags: ['Python', 'Data Structures', 'Hash Maps'],
@@ -92,11 +106,11 @@ for i in left:
         <article className="max-w-5xl mx-auto px-8 py-12">
           {/* Navigation */}
           <Link 
-            href="/projects"
+            href="/blogs"
             className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow duration-200 text-gray-600 hover:text-gray-900 mb-12"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Projects
+            Back to Blogs
           </Link>
 
           {/* Header Section */}
@@ -109,7 +123,7 @@ for i in left:
             </p>
             <div className="flex justify-center gap-4 mb-8">
               <a 
-                href="https://github.com/yourusername/aoc2024"
+                href="https://github.com/matthew3168/AoC2024"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors duration-200"

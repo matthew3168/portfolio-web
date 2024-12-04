@@ -9,17 +9,17 @@ export default function Terminal() {
 > current_status
 [user@system ~]$ learning && building && securing`
 
-  useEffect(() => {
-    let index = 0
-    const timer = setInterval(() => {
-      setText(fullText.slice(0, index))
-      index++
-      if (index > fullText.length) clearInterval(timer)
-    }, 50)
-    return () => clearInterval(timer)
-  }, [])
+    useEffect(() => {
+        let index = 0
+        const timer = setInterval(() => {
+        setText(fullText.slice(0, index))
+        index++
+        if (index > fullText.length) clearInterval(timer)
+        }, 50)
+        return () => clearInterval(timer)
+    }, [fullText])  // Add fullText to dependencies
 
-  return (
+    return (
     <div className="bg-black/90 p-6 rounded-lg font-mono text-green-400 w-full max-w-2xl shadow-xl">
       <div className="flex gap-2 mb-4">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
