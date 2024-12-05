@@ -28,7 +28,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   return (
     <div>
       {/* Thumbnail grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-4 sm:my-8">
         {images.map((image, index) => (
           <div 
             key={index}
@@ -48,10 +48,32 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
       {/* Modal */}
       {currentImageIndex !== null && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
-          {/* ... buttons ... */}
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 p-2"
+            aria-label="Close"
+          >
+            <X className="w-6 h-6 sm:w-8 sm:h-8" />
+          </button>
           
+          <button
+            onClick={prevImage}
+            className="absolute left-4 text-white hover:text-gray-300 p-2"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
+          </button>
+          
+          <button
+            onClick={nextImage}
+            className="absolute right-4 text-white hover:text-gray-300 p-2"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
+          </button>
+
           <div className="max-w-4xl max-h-[80vh] px-4 relative">
-            <div className="relative w-full h-[70vh]">
+            <div className="relative w-full h-[50vh] sm:h-[70vh]">
               <Image
                 src={images[currentImageIndex].src}
                 alt={images[currentImageIndex].alt}
@@ -60,7 +82,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               />
             </div>
             {images[currentImageIndex].caption && (
-              <p className="text-white text-center mt-4">
+              <p className="text-white text-center mt-4 text-sm sm:text-base">
                 {images[currentImageIndex].caption}
               </p>
             )}
