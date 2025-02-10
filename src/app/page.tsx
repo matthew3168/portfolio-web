@@ -145,10 +145,15 @@ export default function Home() {
                 <ProjectCard 
                 title= "ParkSmart"
                 description= "AWS-based IoT Parking Web App"
-                tags= {['AWS', 'IoT', 'Python', 'React']}
+                tags= {['AWS', 'IoT', 'Next.js', 'React']}
                 link= "/projects/ParkSmart"
                 />
-
+                <ProjectCard 
+                title= "MorseV"
+                description= "Decode Morse Code using OpenCV"
+                tags= {['Python', 'OpenCV', 'Security', 'IoT']}
+                link= "/projects/ParkSmart"
+                />
             </div>
             </section>
 

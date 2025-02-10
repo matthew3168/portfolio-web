@@ -122,6 +122,9 @@ for i in left:
             <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
               A collection of daily coding challenges and their solutions
             </p>
+            <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
+             (WORK IN PROGRESS)
+            </p>
             <div className="flex justify-center gap-4">
               <a 
                 href="https://github.com/matthew3168/AoC2024"

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import PageWrapper from '@/components/layout/PageWrapper'
 
-const TAGS = ['AWS', 'Security', 'Python', 'React', 'TypeScript', 'Cloud', 'CTF', 'IoT']
+const TAGS = ['AWS', 'Security', 'Python', 'Next.js', 'React', 'TypeScript', 'TailwindCSS', 'Cloud', 'CTF', 'IoT', 'OpenCV']
 
 export default function ProjectsPage() {
  const [selectedTag, setSelectedTag] = useState<string | null>(null)
@@ -12,9 +12,21 @@ export default function ProjectsPage() {
    {
      title: "ParkSmart",
      description: "AWS-based IoT Parking Web App",
-     tags: ['AWS', 'IoT', 'Python', 'React'],
+     tags: ['AWS', 'IoT', 'Next.js', 'React'],
      link: "/projects/ParkSmart"
    },
+   {
+    title: "MorseV",
+    description: "Computer Vision-based Maritime Morse Code Interpreter that detects, decodes and securely stores light-based Morse code signals in real-time. Features vessel tracking, encrypted storage, and emergency alert system.",
+    tags: ['Python', 'OpenCV', 'Security', 'IoT'],
+    link: "/projects/MorseV"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Modern portfolio and blog platform built with Next.js, featuring a responsive design, dynamic content filtering, and interactive components. Showcases projects, technical writeups, and cybersecurity expertise.",
+    tags: ['Next.js', 'React', 'TypeScript', 'TailwindCSS'],
+    link: "/projects/portfolio"
+  },
    // ... other projects
  ]
 
